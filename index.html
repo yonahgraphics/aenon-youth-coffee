@@ -1,752 +1,84 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aenon Youth Coffee Growers and Producers — Uganda</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:opsz,wght@5..120,500;5..120,600;5..120,700;5..120,800&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --cherry:#E8432F;
-    --cherry-dark:#C22E1D;
-    --coffee:#2B1A12;
-    --coffee-soft:#4A3222;
-    --leaf:#3F7A3D;
-    --leaf-light:#7CB342;
-    --gold:#F5A623;
-    --cream:#FFF6E9;
-    --cream-dim:#F3E7D2;
-    --paper:#FFFDF9;
-    --ink:#241510;
-    --line: rgba(43,26,18,0.14);
-    --radius: 18px;
-    --shadow: 0 12px 30px rgba(43,26,18,0.14);
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:var(--cream);
-    color:var(--ink);
-    font-family:'Space Grotesk', sans-serif;
-    line-height:1.5;
-    overflow-x:hidden;
-  }
-  h1,h2,h3,h4{
-    font-family:'Fraunces', serif;
-    margin:0 0 .4em 0;
-    letter-spacing:-0.01em;
-    color:var(--coffee);
-  }
-  a{color:inherit;text-decoration:none;}
-  img{max-width:100%;display:block;}
-  .eyebrow{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:.72rem;
-    letter-spacing:.14em;
-    text-transform:uppercase;
-    color:var(--cherry-dark);
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    margin-bottom:14px;
-  }
-  .eyebrow::before{
-    content:"";
-    width:7px;height:7px;border-radius:50%;
-    background:var(--cherry);
-    display:inline-block;
-  }
-  .wrap{max-width:1180px;margin:0 auto;padding:0 28px;}
-  @media (prefers-reduced-motion: reduce){
-    *{animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; scroll-behavior:auto !important;}
-  }
-  :focus-visible{outline:3px solid var(--gold); outline-offset:2px; border-radius:4px;}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Aenon Youth Coffee is a youth-led coffee growing and production collective in Uganda.">
+  <title>Aenon Youth Coffee — Uganda</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600;6..72,700&display=swap" rel="stylesheet">
+  <style>
+    :root { --ink:#22150f; --cocoa:#392117; --cherry:#a4382c; --moss:#37503a; --sand:#eee6d8; --paper:#f7f3ec; --sun:#d1a164; --line:rgba(34,21,15,.18); }
+    * { box-sizing:border-box; } html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); background:var(--paper); font-family:"DM Sans",sans-serif; -webkit-font-smoothing:antialiased; }
+    a { color:inherit; text-decoration:none; } img { display:block; width:100%; } button { font:inherit; }
+    :focus-visible { outline:2px solid var(--sun); outline-offset:4px; }
+    .shell { width:min(1440px,calc(100% - 64px)); margin:0 auto; }
+    .eyebrow { display:flex; align-items:center; gap:10px; margin:0 0 18px; font:500 11px/1 "DM Mono",monospace; letter-spacing:.14em; text-transform:uppercase; }
+    .eyebrow::before { content:""; display:block; width:26px; height:1px; background:currentColor; }
+    .button { display:inline-flex; align-items:center; justify-content:center; min-height:49px; padding:0 19px; border:1px solid currentColor; font-size:12px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; transition:color .22s ease,background .22s ease,transform .22s ease; }
+    .button:hover { transform:translateY(-2px); }.button--solid { border-color:var(--ink); background:var(--ink); color:var(--paper); }.button--solid:hover { border-color:var(--cherry); background:var(--cherry); }.button--light { color:var(--paper); }.button--light:hover { color:var(--ink); background:var(--paper); }
 
-  /* ---------- NAV ---------- */
-  header.nav{
-    position:sticky; top:0; z-index:50;
-    background:rgba(255,246,233,0.88);
-    backdrop-filter: blur(8px);
-    border-bottom:1px solid var(--line);
-  }
-  .nav-inner{
-    max-width:1180px;margin:0 auto;padding:14px 28px;
-    display:flex;align-items:center;justify-content:space-between;
-  }
-  .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.15rem;color:var(--coffee);}
-  .brand svg{width:30px;height:30px;flex-shrink:0;}
-  nav.links{display:flex;gap:28px;font-size:.92rem;font-weight:500;}
-  nav.links a{position:relative;padding:4px 0;color:var(--coffee-soft);}
-  nav.links a::after{
-    content:"";position:absolute;left:0;bottom:-2px;height:2px;width:0%;
-    background:var(--cherry);transition:width .25s ease;
-  }
-  nav.links a:hover::after{width:100%;}
-  .nav-cta{
-    background:var(--cherry); color:#fff; font-weight:600; font-size:.88rem;
-    padding:10px 20px; border-radius:100px; border:none; cursor:pointer;
-    box-shadow:0 6px 16px rgba(232,67,47,0.35);
-    transition:transform .2s ease, box-shadow .2s ease;
-  }
-  .nav-cta:hover{transform:translateY(-2px); box-shadow:0 10px 22px rgba(232,67,47,0.45);}
-  .menu-btn{display:none;background:none;border:none;font-size:1.6rem;color:var(--coffee);cursor:pointer;}
-  @media (max-width: 860px){
-    nav.links{display:none;}
-    .menu-btn{display:block;}
-    .nav-cta{display:none;}
-  }
+    /* Navigation */
+    .site-header { position:absolute; inset:0 0 auto; z-index:10; color:var(--paper); }.nav { display:flex; align-items:center; justify-content:space-between; min-height:88px; }
+    .wordmark { display:flex; align-items:center; gap:12px; font:600 20px/1 "Newsreader",serif; letter-spacing:-.04em; }.wordmark-mark { display:grid; width:29px; height:29px; place-items:center; border:1px solid currentColor; border-radius:50%; font:italic 500 18px/1 "Newsreader",serif; }
+    .nav-links { display:flex; align-items:center; gap:31px; font-size:11px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; }.nav-links a { opacity:.86; transition:opacity .2s ease; }.nav-links a:hover { opacity:1; }.nav .button { min-height:40px; color:var(--paper); font-size:10px; }
+    .menu { display:none; appearance:none; width:42px; height:42px; padding:0; border:0; background:transparent; color:inherit; cursor:pointer; }.menu span,.menu::before,.menu::after { content:""; display:block; width:24px; height:1px; margin:6px auto; background:currentColor; }.mobile-panel { display:none; }
 
-  /* ---------- HERO ---------- */
-  .hero{
-    position:relative;
-    padding:96px 0 120px;
-    background:
-      radial-gradient(circle at 85% 8%, rgba(245,166,35,0.35), transparent 45%),
-      radial-gradient(circle at 6% 90%, rgba(63,122,61,0.28), transparent 45%),
-      var(--cream);
-    overflow:hidden;
-  }
-  .cherry-field{
-    position:absolute; inset:0; pointer-events:none; opacity:0.9;
-  }
-  .cherry{
-    position:absolute; border-radius:50%;
-    background:radial-gradient(circle at 32% 28%, #ff8a6f, var(--cherry) 60%, var(--cherry-dark) 100%);
-    animation: bob 6s ease-in-out infinite;
-  }
-  .cherry::after{
-    content:""; position:absolute; top:-9px; left:50%; width:3px; height:14px;
-    background:var(--leaf); border-radius:2px; transform:translateX(-50%) rotate(8deg);
-  }
-  @keyframes bob{ 0%,100%{transform:translateY(0) rotate(0deg);} 50%{transform:translateY(-14px) rotate(4deg);} }
-  .hero-grid{
-    position:relative; z-index:2;
-    display:grid; grid-template-columns:1.1fr 0.9fr; gap:56px; align-items:center;
-  }
-  @media (max-width:900px){ .hero-grid{grid-template-columns:1fr;} }
-  .hero h1{
-    font-size:clamp(2.6rem, 6vw, 4.6rem);
-    font-weight:900;
-    line-height:0.98;
-  }
-  .hero h1 span{color:var(--cherry); font-style:italic;}
-  .hero p.lead{
-    font-size:1.15rem; max-width:520px; color:var(--coffee-soft); margin:18px 0 34px;
-  }
-  .hero-ctas{display:flex; gap:14px; flex-wrap:wrap;}
-  .btn{
-    display:inline-flex; align-items:center; gap:8px;
-    padding:15px 28px; border-radius:100px; font-weight:600; font-size:.98rem;
-    cursor:pointer; border:2px solid transparent; transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
-  }
-  .btn-primary{background:var(--coffee); color:var(--cream);}
-  .btn-primary:hover{transform:translateY(-3px); box-shadow:0 12px 24px rgba(43,26,18,.28);}
-  .btn-outline{border-color:var(--coffee); color:var(--coffee); background:transparent;}
-  .btn-outline:hover{background:var(--coffee); color:var(--cream); transform:translateY(-3px);}
-  .btn-gold{background:var(--gold); color:var(--coffee);}
-  .btn-gold:hover{transform:translateY(-3px); box-shadow:0 12px 24px rgba(245,166,35,.4);}
+    /* Hero */
+    .hero { position:relative; min-height:min(850px,100svh); color:var(--paper); background:var(--cocoa); overflow:hidden; }.hero-media { position:absolute; inset:0 0 0 45%; overflow:hidden; }.hero-media::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg,var(--cocoa) 0%,rgba(57,33,23,.22) 28%,rgba(19,13,10,.16)); }.hero-media img { height:100%; object-fit:cover; object-position:center; filter:saturate(.88) contrast(1.04); }
+    .hero-inner { position:relative; z-index:1; display:flex; min-height:min(850px,100svh); flex-direction:column; justify-content:flex-end; padding:148px 0 54px; }.hero-copy { width:min(850px,70%); }.hero .eyebrow { color:#e7d9c3; } h1,h2,h3,p { margin-top:0; } h1,h2,h3 { font-family:"Newsreader",serif; font-weight:500; letter-spacing:-.055em; }
+    h1 { max-width:830px; margin-bottom:27px; font-size:clamp(64px,8.2vw,142px); line-height:.85; } h1 em { color:#e4bb82; font-weight:400; }.hero-copy > p:not(.eyebrow) { max-width:490px; margin-bottom:35px; color:rgba(247,243,236,.82); font-size:17px; line-height:1.63; }.hero-note { position:absolute; right:0; bottom:55px; width:184px; padding-top:14px; border-top:1px solid rgba(247,243,236,.48); color:rgba(247,243,236,.82); font:11px/1.5 "DM Mono",monospace; }
 
-  .hero-card{
-    background:var(--coffee); color:var(--cream); border-radius:26px;
-    padding:34px; position:relative; box-shadow:var(--shadow);
-    transform:rotate(2deg);
-  }
-  .hero-card:hover{transform:rotate(0deg); transition:transform .35s ease;}
-  .hero-card .tag{font-family:'IBM Plex Mono',monospace; font-size:.72rem; letter-spacing:.1em; color:var(--gold); text-transform:uppercase;}
-  .hero-card h3{color:var(--cream); font-size:1.5rem; margin-top:10px;}
-  .stat-row{display:flex; gap:22px; margin-top:22px; flex-wrap:wrap;}
-  .stat{flex:1; min-width:100px;}
-  .stat .num{font-family:'Fraunces',serif; font-size:2.1rem; font-weight:800; color:var(--leaf-light);}
-  .stat .lbl{font-size:.78rem; color:rgba(255,246,233,0.7); margin-top:2px;}
+    /* Statement */
+    .statement { padding:145px 0 132px; background:var(--paper); }.statement-grid { display:grid; grid-template-columns:1fr minmax(0,1.64fr); gap:60px; }.statement h2 { max-width:950px; margin:-10px 0 42px; font-size:clamp(47px,5.25vw,83px); line-height:.96; }.statement h2 em { color:var(--cherry); font-style:normal; }.statement-copy { max-width:570px; padding-left:2px; font-size:18px; line-height:1.65; }.statement-copy p + p { margin-top:20px; }.quiet-rule { width:100%; height:1px; margin-top:61px; background:var(--line); }
 
-  /* ---------- SECTION shells ---------- */
-  section{padding:100px 0;}
-  .section-head{max-width:640px; margin-bottom:56px;}
-  .section-head p{color:var(--coffee-soft); font-size:1.05rem;}
-  .section-alt{background:var(--paper);}
-  .section-dark{background:var(--coffee); color:var(--cream);}
-  .section-dark h2, .section-dark h3{color:var(--cream);}
-  .section-dark .section-head p{color:rgba(255,246,233,0.75);}
+    /* Image and text feature */
+    .feature { display:grid; grid-template-columns:minmax(0,1.18fr) minmax(340px,.82fr); background:var(--moss); color:var(--paper); }.feature-media { min-height:695px; overflow:hidden; }.feature-media img { height:100%; object-fit:cover; filter:saturate(.8) contrast(1.05); }.feature-copy { display:flex; flex-direction:column; justify-content:space-between; padding:68px clamp(40px,6vw,103px); }.feature-copy .eyebrow { color:#ded2bd; }.feature h2 { max-width:515px; margin:30px 0; font-size:clamp(48px,4.4vw,77px); line-height:.92; }.feature h2 em { color:#e5bb80; font-style:normal; }.feature-copy p:not(.eyebrow) { max-width:430px; margin-bottom:0; color:rgba(247,243,236,.82); font-size:16px; line-height:1.68; }.caption { border-top:1px solid rgba(247,243,236,.35); padding-top:14px; font:10px/1.55 "DM Mono",monospace; letter-spacing:.04em; color:rgba(247,243,236,.7); }
 
-  /* ---------- ABOUT ---------- */
-  .about-grid{display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:start;}
-  @media (max-width:860px){.about-grid{grid-template-columns:1fr;}}
-  .about-visual{
-    aspect-ratio:4/3.2; border-radius:22px; position:relative; overflow:hidden;
-    background:linear-gradient(160deg, var(--leaf) 0%, #2c5c2b 55%, var(--coffee) 100%);
-  }
-  .about-visual .ring{
-    position:absolute; border:2px solid rgba(255,246,233,0.35); border-radius:50%;
-  }
-  .about-visual .r1{width:180px;height:180px; top:-40px; right:-40px;}
-  .about-visual .r2{width:100px;height:100px; bottom:20px; left:30px; border-color:var(--gold);}
-  .about-visual .quote{
-    position:absolute; inset:auto 30px 30px 30px; color:var(--cream);
-    font-family:'Fraunces',serif; font-size:1.3rem; font-weight:600; line-height:1.3;
-  }
-  .about-copy p{color:var(--coffee-soft); font-size:1.04rem; margin-bottom:18px;}
-  .pillars{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:28px;}
-  @media (max-width:640px){.pillars{grid-template-columns:1fr;}}
-  .pillar{background:var(--cream-dim); border-radius:14px; padding:18px; border:1px solid var(--line);}
-  .pillar .pnum{font-family:'IBM Plex Mono',monospace; color:var(--cherry); font-weight:600; font-size:.85rem;}
-  .pillar h4{font-size:1rem; margin-top:6px;}
-  .pillar p{font-size:.88rem; color:var(--coffee-soft); margin:0;}
+    /* Principles */
+    .principles { padding:135px 0 125px; background:var(--sand); }.principles-head { display:flex; justify-content:space-between; align-items:flex-end; gap:40px; padding-bottom:45px; }.principles h2 { width:min(750px,100%); margin:0; font-size:clamp(48px,5vw,76px); line-height:.95; }.principles-intro { max-width:300px; margin:0; font-size:15px; line-height:1.6; }.principle-list { border-top:1px solid var(--line); }.principle { display:grid; grid-template-columns:10% 34% 1fr; gap:24px; align-items:baseline; padding:25px 0 27px; border-bottom:1px solid var(--line); }.principle-number { color:var(--cherry); font:11px "DM Mono",monospace; }.principle h3 { margin:0; font-size:clamp(29px,3vw,47px); line-height:1; }.principle p { max-width:455px; margin:0; font-size:15px; line-height:1.6; }
 
-  /* ---------- PROGRAMS ---------- */
-  .programs-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:26px;}
-  @media (max-width:900px){.programs-grid{grid-template-columns:1fr 1fr;}}
-  @media (max-width:640px){.programs-grid{grid-template-columns:1fr;}}
-  .prog-card{
-    background:var(--paper); border-radius:var(--radius); padding:30px;
-    border:1px solid var(--line); position:relative; overflow:hidden;
-    transition:transform .25s ease, box-shadow .25s ease;
-  }
-  .prog-card:hover{transform:translateY(-8px); box-shadow:var(--shadow);}
-  .prog-card .icon{
-    width:52px; height:52px; border-radius:14px; display:flex; align-items:center; justify-content:center;
-    margin-bottom:18px; font-size:1.5rem;
-  }
-  .ic-1{background:#FDE9C8;} .ic-2{background:#DCEBD3;} .ic-3{background:#FBD9CF;}
-  .prog-card h3{font-size:1.2rem;}
-  .prog-card p{color:var(--coffee-soft); font-size:.95rem; margin:8px 0 18px;}
-  .prog-card .tags{display:flex; gap:8px; flex-wrap:wrap;}
-  .prog-card .tags span{
-    font-family:'IBM Plex Mono',monospace; font-size:.68rem; background:var(--cream-dim);
-    padding:5px 10px; border-radius:100px; color:var(--coffee-soft);
-  }
+    /* Closing */
+    .closing { position:relative; min-height:775px; display:grid; place-items:center; overflow:hidden; color:var(--paper); background:var(--ink); }.closing-image { position:absolute; inset:0; opacity:.56; }.closing-image::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(34,21,15,.1),rgba(34,21,15,.78)); }.closing-image img { height:100%; object-fit:cover; filter:saturate(.65); }.closing-copy { position:relative; z-index:1; width:min(765px,calc(100% - 48px)); text-align:center; }.closing-copy .eyebrow { justify-content:center; color:#eadbc3; }.closing h2 { margin:0 0 36px; font-size:clamp(62px,7.2vw,112px); line-height:.86; }.closing h2 em { color:#e3b77c; font-style:normal; }.closing .button { color:var(--paper); }.closing .button:hover { color:var(--ink); background:var(--paper); }
 
-  /* ---------- JOURNEY (signature element) ---------- */
-  .journey{position:relative;}
-  .journey-path{
-    display:flex; overflow-x:auto; gap:0; padding-bottom:14px; scrollbar-width:thin;
-    scroll-snap-type:x proximity;
-  }
-  .journey-step{
-    flex:0 0 auto; width:250px; scroll-snap-align:start; position:relative; padding:0 20px 0 0;
-  }
-  .journey-step .bean{
-    width:64px; height:64px; border-radius:50%; display:flex; align-items:center; justify-content:center;
-    font-size:1.6rem; margin-bottom:16px; position:relative; z-index:2;
-    box-shadow:0 8px 18px rgba(0,0,0,0.15);
-  }
-  .journey-step:nth-child(1) .bean{background:var(--leaf-light);}
-  .journey-step:nth-child(2) .bean{background:#F5D949;}
-  .journey-step:nth-child(3) .bean{background:var(--cherry);}
-  .journey-step:nth-child(4) .bean{background:var(--gold);}
-  .journey-step:nth-child(5) .bean{background:var(--coffee-soft); color:#fff;}
-  .journey-step::before{
-    content:""; position:absolute; top:32px; left:64px; right:0; height:2px;
-    background:repeating-linear-gradient(90deg, var(--line) 0 8px, transparent 8px 14px);
-  }
-  .journey-step:last-child::before{display:none;}
-  .journey-step .stage-label{font-family:'IBM Plex Mono',monospace; font-size:.7rem; color:var(--cherry-dark); letter-spacing:.08em; text-transform:uppercase;}
-  .journey-step h4{font-size:1.08rem; margin:6px 0 6px;}
-  .journey-step p{font-size:.88rem; color:var(--coffee-soft); margin:0; max-width:220px;}
+    /* Footer */
+    footer { padding:36px 0 42px; background:var(--ink); color:rgba(247,243,236,.72); }.footer-top { display:flex; justify-content:space-between; gap:35px; align-items:flex-end; padding-bottom:38px; border-bottom:1px solid rgba(247,243,236,.2); } footer .wordmark { color:var(--paper); }.footer-address { max-width:320px; margin:0; font-size:13px; line-height:1.6; text-align:right; }.footer-bottom { display:flex; justify-content:space-between; gap:25px; padding-top:17px; font:10px/1.5 "DM Mono",monospace; }.footer-bottom a { text-decoration:underline; text-underline-offset:3px; }
 
-  /* ---------- GALLERY ---------- */
-  .gallery-grid{
-    display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:150px; gap:14px;
-  }
-  @media (max-width:900px){.gallery-grid{grid-template-columns:repeat(2,1fr);}}
-  .g-tile{
-    border-radius:16px; position:relative; overflow:hidden; display:flex; align-items:flex-end; padding:14px;
-    color:#fff; font-family:'IBM Plex Mono',monospace; font-size:.72rem; letter-spacing:.04em;
-  }
-  .g-tile span{position:relative; z-index:2; text-transform:uppercase;}
-  .g-tile::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.55));}
-  .g-tile:nth-child(1){grid-column:span 2; grid-row:span 2; background:linear-gradient(135deg,#4C7A3D,#2f5227);}
-  .g-tile:nth-child(2){background:linear-gradient(135deg,#E8432F,#a72c1e);}
-  .g-tile:nth-child(3){background:linear-gradient(135deg,#F5A623,#c67f14);}
-  .g-tile:nth-child(4){background:linear-gradient(135deg,#2B1A12,#4A3222); grid-row:span 2;}
-  .g-tile:nth-child(5){background:linear-gradient(135deg,#7CB342,#4C7A3D);}
-  .g-tile:nth-child(6){background:linear-gradient(135deg,#C22E1D,#7a1f14);}
-
-  /* ---------- IMPACT NUMBERS ---------- */
-  .impact-strip{
-    display:grid; grid-template-columns:repeat(4,1fr); gap:24px; text-align:center;
-  }
-  @media (max-width:760px){.impact-strip{grid-template-columns:1fr 1fr;}}
-  .impact-strip .num{font-family:'Fraunces',serif; font-weight:900; font-size:2.8rem; color:var(--gold);}
-  .impact-strip .lbl{font-size:.85rem; color:rgba(255,246,233,0.75); margin-top:6px;}
-
-  /* ---------- BLOG ---------- */
-  .blog-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:26px;}
-  @media (max-width:900px){.blog-grid{grid-template-columns:1fr;}}
-  .post{background:var(--cream); border-radius:var(--radius); overflow:hidden; border:1px solid var(--line); transition:transform .25s ease;}
-  .post:hover{transform:translateY(-6px);}
-  .post-media{height:150px; background:linear-gradient(135deg, var(--leaf), var(--coffee));}
-  .post:nth-child(2) .post-media{background:linear-gradient(135deg, var(--cherry), var(--coffee));}
-  .post:nth-child(3) .post-media{background:linear-gradient(135deg, var(--gold), var(--coffee-soft));}
-  .post-body{padding:22px;}
-  .post .date{font-family:'IBM Plex Mono',monospace; font-size:.7rem; color:var(--cherry-dark); text-transform:uppercase;}
-  .post h3{font-size:1.1rem; margin:8px 0;}
-  .post p{font-size:.9rem; color:var(--coffee-soft);}
-  .post .readmore{font-size:.85rem; font-weight:600; color:var(--coffee); display:inline-flex; gap:6px; margin-top:8px;}
-
-  /* ---------- DONATE ---------- */
-  .donate-grid{display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:center;}
-  @media (max-width:900px){.donate-grid{grid-template-columns:1fr;}}
-  .tier-cards{display:flex; flex-direction:column; gap:14px;}
-  .tier{
-    display:flex; justify-content:space-between; align-items:center; gap:16px;
-    background:var(--paper); border:1px solid var(--line); border-radius:16px; padding:20px 22px;
-    cursor:pointer; transition:border-color .2s ease, transform .2s ease;
-  }
-  .tier:hover{border-color:var(--cherry); transform:translateX(4px);}
-  .tier .amt{font-family:'Fraunces',serif; font-weight:800; font-size:1.4rem; color:var(--cherry);}
-  .tier .desc{font-size:.86rem; color:var(--coffee-soft); max-width:280px;}
-  .tier .go{
-    width:36px; height:36px; border-radius:50%; background:var(--coffee); color:var(--cream);
-    display:flex; align-items:center; justify-content:center; flex-shrink:0;
-  }
-
-  /* ---------- CONTACT / GET INVOLVED FORM ---------- */
-  .contact-wrap{display:grid; grid-template-columns:0.9fr 1.1fr; gap:56px;}
-  @media (max-width:900px){.contact-wrap{grid-template-columns:1fr;}}
-  .info-card{background:var(--coffee); color:var(--cream); border-radius:22px; padding:32px;}
-  .info-card h3{color:var(--cream);}
-  .info-row{display:flex; gap:12px; margin-top:18px; font-size:.92rem; align-items:flex-start;}
-  .info-row .ic{color:var(--gold);}
-  .form-card{background:var(--paper); border:1px solid var(--line); border-radius:22px; padding:32px;}
-  .form-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
-  @media (max-width:520px){.form-grid{grid-template-columns:1fr;}}
-  .field{display:flex; flex-direction:column; gap:6px; margin-bottom:16px;}
-  .field.full{grid-column:1/-1;}
-  label{font-size:.8rem; font-weight:600; color:var(--coffee-soft);}
-  input, select, textarea{
-    font-family:'Space Grotesk', sans-serif; font-size:.95rem; padding:12px 14px;
-    border-radius:10px; border:1.5px solid var(--line); background:var(--cream); color:var(--ink);
-  }
-  input:focus, select:focus, textarea:focus{border-color:var(--cherry); outline:none;}
-  textarea{resize:vertical; min-height:90px;}
-  .submit-row{display:flex; align-items:center; gap:16px; margin-top:6px;}
-
-  /* ---------- FOOTER ---------- */
-  footer{background:var(--coffee); color:rgba(255,246,233,0.8); padding:60px 0 26px;}
-  .foot-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:36px;}
-  @media (max-width:760px){.foot-grid{grid-template-columns:1fr 1fr;}}
-  footer h4{color:var(--cream); font-family:'Space Grotesk',sans-serif; font-size:.9rem; text-transform:uppercase; letter-spacing:.08em; margin-bottom:14px;}
-  footer .brand{color:var(--cream); margin-bottom:12px;}
-  footer p.tag{font-size:.88rem; max-width:280px;}
-  footer ul{list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px; font-size:.88rem;}
-  footer ul a:hover{color:var(--gold);}
-  .foot-bottom{
-    margin-top:46px; padding-top:22px; border-top:1px solid rgba(255,246,233,0.15);
-    display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-size:.78rem;
-  }
-  .social{display:flex; gap:12px;}
-  .social a{
-    width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,246,233,0.3);
-    display:flex;align-items:center;justify-content:center; transition:background .2s ease;
-  }
-  .social a:hover{background:var(--cherry); border-color:var(--cherry);}
-
-  .reveal{opacity:0; transform:translateY(24px); transition:opacity .6s ease, transform .6s ease;}
-  .reveal.in{opacity:1; transform:translateY(0);}
-
-  /* mobile menu */
-  .mobile-menu{
-    display:none; position:fixed; inset:0; background:var(--coffee); z-index:100;
-    flex-direction:column; padding:28px; gap:22px;
-  }
-  .mobile-menu.open{display:flex;}
-  .mobile-menu a{color:var(--cream); font-size:1.3rem; font-family:'Fraunces',serif;}
-  .mobile-menu .close{align-self:flex-end; background:none;border:none;color:var(--cream);font-size:1.8rem;cursor:pointer;}
-
-  /* ---------- EDITORIAL REFINEMENT ---------- */
-  :root{--cherry:#a63d2f;--cherry-dark:#7b291f;--coffee:#211811;--coffee-soft:#5b4a3d;--leaf:#3e5b43;--leaf-light:#82966f;--gold:#c79b59;--cream:#f4efe6;--cream-dim:#e7dfd1;--paper:#fbfaf6;--ink:#211811;--line:rgba(33,24,17,.16);--radius:0;--shadow:none;}
-  body{font-family:'DM Sans',sans-serif;background:var(--cream);}
-  h1,h2,h3,h4{font-family:'Playfair Display',serif;letter-spacing:-.035em;}
-  .eyebrow,.hero-card .tag,.pillar .pnum,.journey-step .stage-label,.prog-card .tags span,.post .date{font-family:'DM Mono',monospace;}
-  .wrap{max-width:1240px;padding:0 38px;}
-  .eyebrow{font-size:.67rem;letter-spacing:.16em;color:var(--coffee-soft);gap:9px;}
-  .eyebrow::before{width:18px;height:1px;border-radius:0;background:var(--cherry);}
-  header.nav{background:rgba(244,239,230,.92);border-bottom:1px solid var(--line);backdrop-filter:blur(14px);}
-  .nav-inner{max-width:1240px;padding:17px 38px;}
-  .brand{font-family:'Playfair Display',serif;font-size:1.24rem;letter-spacing:-.04em;}
-  .brand svg{display:none;}
-  .brand::before{content:'A';width:27px;height:27px;border:1px solid var(--coffee);border-radius:50%;display:grid;place-items:center;font-family:'Playfair Display',serif;font-style:italic;font-size:1.1rem;}
-  nav.links{gap:24px;font-size:.79rem;text-transform:uppercase;letter-spacing:.07em;}
-  .nav-cta{border-radius:0;background:var(--coffee);box-shadow:none;padding:10px 17px;font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;}
-  .nav-cta:hover{transform:none;background:var(--cherry);box-shadow:none;}
-  .hero{padding:124px 0 104px;background:var(--cream);border-bottom:1px solid var(--line);}
-  .cherry-field{display:none;}
-  .hero-grid{grid-template-columns:1.2fr .8fr;gap:76px;align-items:end;}
-  .hero h1{font-size:clamp(3.6rem,7vw,6.5rem);font-weight:600;line-height:.9;max-width:760px;}
-  .hero h1 span{color:var(--leaf);}
-  .hero p.lead{font-size:1.08rem;line-height:1.7;max-width:560px;margin:25px 0 34px;}
-  .btn{border-radius:0;padding:14px 21px;font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;}
-  .btn-primary{background:var(--coffee);}.btn-gold{background:transparent;border-color:var(--coffee);color:var(--coffee);}.btn-gold:hover,.btn-primary:hover{transform:none;box-shadow:none;background:var(--cherry);color:var(--paper);border-color:var(--cherry);}
-  .hero-card{border-radius:0;transform:none;box-shadow:none;background:var(--leaf);padding:32px 30px 28px;border-top:5px solid var(--gold);}
-  .hero-card:hover{transform:none;}.hero-card h3{font-size:1.65rem;line-height:1.15;}.hero-card .tag{color:#e7d7bb;}.stat-row{gap:14px;border-top:1px solid rgba(255,255,255,.24);padding-top:20px;}.stat .num{color:#f0dec0;font-size:2.35rem;}.stat .lbl{color:rgba(255,255,255,.78);}
-  section{padding:116px 0;}.section-head{margin-bottom:48px;}.section-head h2{font-size:clamp(2.35rem,4vw,3.65rem);line-height:1.02;}.section-alt{background:#ebe5da;}.section-dark{background:var(--coffee);}
-  .about-grid{gap:84px;}.about-visual{border-radius:0;aspect-ratio:4/4.5;background:linear-gradient(165deg,#3f5c43 0 50%,#2c241d 50%);}
-  .about-visual::before{content:'AENON / 01';position:absolute;top:22px;left:24px;font:500 .68rem 'DM Mono',monospace;letter-spacing:.14em;color:#e7d7bb;}
-  .about-visual .ring{border-width:1px;}.about-visual .r1{width:280px;height:280px;top:-118px;right:-90px;}.about-visual .r2{width:146px;height:146px;bottom:22px;left:22px;}.about-visual .quote{inset:auto 26px 28px;font-size:1.5rem;line-height:1.22;}
-  .about-copy p{line-height:1.7;}.pillars{gap:0;border-top:1px solid var(--line);margin-top:32px;}.pillar{border:0;border-right:1px solid var(--line);border-radius:0;background:transparent;padding:18px 16px 8px 0;}.pillar+ .pillar{padding-left:16px;}.pillar:last-child{border-right:0;}.pillar h4{font-size:1.1rem;}
-  .programs-grid{gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line);}.prog-card{border-radius:0;border:0;border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:29px 26px;min-height:258px;}.prog-card:hover{transform:none;box-shadow:none;background:#f7f3ec;}.prog-card .icon{display:none;}.prog-card::before{content:attr(data-no);display:block;margin-bottom:34px;font:500 .7rem 'DM Mono',monospace;letter-spacing:.13em;color:var(--cherry);}.prog-card h3{font-size:1.45rem;line-height:1.1;}.prog-card .tags span{border-radius:0;background:transparent;border:1px solid var(--line);padding:4px 7px;}
-  .journey-path{border-top:1px solid var(--line);padding-top:28px;}.journey-step{width:20%;min-width:190px;padding-right:24px;}.journey-step .bean{display:none;}.journey-step::before{display:none;}.journey-step .stage-label{display:block;border-top:4px solid var(--leaf);padding-top:12px;color:var(--coffee-soft);}.journey-step:nth-child(2) .stage-label{border-color:#c79b59;}.journey-step:nth-child(3) .stage-label{border-color:var(--cherry);}.journey-step:nth-child(4) .stage-label{border-color:#8b714a;}.journey-step:nth-child(5) .stage-label{border-color:var(--coffee);}.journey-step h4{font-size:1.28rem;line-height:1.1;margin-top:11px;}
-  .gallery-grid{gap:1px;background:var(--coffee);grid-auto-rows:175px;}.g-tile{border-radius:0;padding:18px;background-size:cover!important;}.g-tile::before{content:attr(data-no);position:absolute;top:17px;left:18px;z-index:2;font:500 .65rem 'DM Mono',monospace;letter-spacing:.12em;color:rgba(255,255,255,.82);}.g-tile:nth-child(1){background:linear-gradient(160deg,rgba(26,46,30,.22),rgba(26,46,30,.72)),url('https://images.unsplash.com/photo-1511537190424-bbbab87ac5eb?auto=format&fit=crop&w=1200&q=80') center/cover;}.g-tile:nth-child(2){background:linear-gradient(150deg,rgba(109,39,28,.15),rgba(109,39,28,.7)),url('https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&w=800&q=80') center/cover;}.g-tile:nth-child(3){background:linear-gradient(150deg,rgba(87,53,18,.1),rgba(43,27,10,.65)),url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=80') center/cover;}.g-tile:nth-child(4){background:linear-gradient(160deg,rgba(30,22,16,.15),rgba(30,22,16,.8)),url('https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=800&q=80') center/cover;}.g-tile:nth-child(5){background:linear-gradient(150deg,rgba(38,73,37,.2),rgba(38,73,37,.72)),url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=80') center/cover;}.g-tile:nth-child(6){background:linear-gradient(150deg,rgba(80,29,20,.25),rgba(80,29,20,.75)),url('https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=800&q=80') center/cover;}
-  .impact-strip{gap:0;text-align:left;border-top:1px solid rgba(255,255,255,.2);}.impact-strip>div{padding:25px 26px 10px;border-right:1px solid rgba(255,255,255,.2);}.impact-strip>div:last-child{border-right:0;}.impact-strip .num{color:#e7d7bb;font-size:3.5rem;}
-  .post{border-radius:0;background:var(--paper);}.post:hover{transform:none;}.post-media{height:180px;background:linear-gradient(135deg,#466549,#1e2920);}.post:nth-child(2) .post-media{background:linear-gradient(135deg,#b04a39,#553226);}.post:nth-child(3) .post-media{background:linear-gradient(135deg,#b78b4c,#4d3825);}.post-body{padding:25px;}.post h3{font-size:1.45rem;line-height:1.1;}
-  .tier{border-radius:0;background:transparent;padding:20px 0;border:0;border-top:1px solid var(--line);}.tier:last-child{border-bottom:1px solid var(--line);}.tier:hover{border-color:var(--coffee);transform:none;}.tier .go{border-radius:0;background:var(--cherry);}.tier .amt{color:var(--coffee);}
-  .info-card,.form-card{border-radius:0;}.info-card{background:var(--leaf);}.info-row .ic{display:none;}.info-row::before{content:'—';color:#e7d7bb;}.form-card{background:var(--paper);}.social a{border-radius:0;}
-  @media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:44px;}.hero-card{max-width:520px;}.journey-step{width:250px;}.about-grid{gap:48px;}.impact-strip{grid-template-columns:1fr 1fr;}.impact-strip>div:nth-child(2){border-right:0;}}
-  @media(max-width:640px){.wrap,.nav-inner{padding-left:21px;padding-right:21px;}.hero{padding:86px 0 76px;}.hero h1{font-size:3.4rem;}.programs-grid{grid-template-columns:1fr;}.pillar,.pillar+ .pillar{border-right:0;border-bottom:1px solid var(--line);padding:16px 0;}.pillars{grid-template-columns:1fr;}.gallery-grid{grid-template-columns:1fr 1fr;grid-auto-rows:130px;}.g-tile:nth-child(1){grid-column:span 2;}.impact-strip>div{padding:20px 12px;}.impact-strip .num{font-size:2.7rem;}}
-</style>
+    @media (max-width:900px) { .shell { width:min(100% - 40px,1440px); }.nav-links { gap:17px; }.hero-media { left:35%; opacity:.72; }.hero-copy { width:88%; }.hero-note { display:none; }.statement-grid { grid-template-columns:1fr; gap:25px; }.feature { grid-template-columns:1fr; }.feature-media { min-height:490px; }.feature-copy { min-height:530px; padding:58px 40px; }.principle { grid-template-columns:11% 38% 1fr; } }
+    @media (max-width:650px) { .site-header { color:var(--paper); }.nav { min-height:72px; }.wordmark { font-size:18px; }.wordmark-mark { width:27px; height:27px; }.nav-links,.nav > .button { display:none; }.menu { display:block; }.mobile-panel { position:fixed; inset:0; z-index:20; display:none; padding:24px 20px; background:var(--ink); color:var(--paper); }.mobile-panel.is-open { display:flex; flex-direction:column; }.mobile-top { display:flex; align-items:center; justify-content:space-between; }.mobile-close { appearance:none; width:42px; height:42px; border:0; background:transparent; color:inherit; font-size:33px; cursor:pointer; }.mobile-links { display:flex; flex:1; flex-direction:column; justify-content:center; gap:21px; font:500 47px/.92 "Newsreader",serif; letter-spacing:-.05em; }.mobile-panel .button { align-self:flex-start; }.hero { min-height:760px; }.hero-media { inset:0; opacity:.42; }.hero-media::after { background:linear-gradient(180deg,rgba(34,21,15,.33),rgba(34,21,15,.91)); }.hero-inner { min-height:760px; padding:120px 0 38px; }.hero-copy { width:100%; } h1 { margin-bottom:22px; font-size:clamp(56px,16.5vw,76px); }.hero-copy > p:not(.eyebrow) { font-size:15px; }.statement,.principles { padding:90px 0; }.statement h2 { margin-bottom:29px; }.statement-copy { font-size:16px; }.feature-media { min-height:380px; }.feature-copy { min-height:470px; padding:44px 22px; }.feature h2 { margin:20px 0; }.principles-head { display:block; padding-bottom:34px; }.principles-intro { margin-top:23px; }.principle { grid-template-columns:42px 1fr; gap:14px; padding:23px 0; }.principle p { grid-column:2; }.closing { min-height:620px; }.footer-top { display:block; }.footer-address { margin-top:26px; text-align:left; }.footer-bottom { flex-direction:column; } }
+  </style>
 </head>
 <body>
-
-<header class="nav">
-  <div class="nav-inner">
-    <div class="brand">
-      Aenon&nbsp;Youth&nbsp;Coffee
-    </div>
-    <nav class="links">
-      <a href="#about">About</a>
-      <a href="#programs">Programs</a>
-      <a href="#journey">Journey</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#blog">Stories</a>
-      <a href="#contact">Contact</a>
+  <header class="site-header">
+    <nav class="nav shell" aria-label="Main navigation">
+      <a class="wordmark" href="#top" aria-label="Aenon Youth Coffee home"><span class="wordmark-mark">A</span><span>Aenon Youth Coffee</span></a>
+      <div class="nav-links"><a href="#work">Our work</a><a href="#approach">Approach</a><a href="#contact">Contact</a></div>
+      <a class="button" href="#contact">Partner with us</a>
+      <button class="menu" type="button" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false"><span></span></button>
     </nav>
-    <button class="nav-cta" onclick="document.getElementById('donate').scrollIntoView({behavior:'smooth'})">Donate</button>
-    <button class="menu-btn" aria-label="Open menu" onclick="document.getElementById('mobileMenu').classList.add('open')">☰</button>
-  </div>
-</header>
-
-<div class="mobile-menu" id="mobileMenu">
-  <button class="close" aria-label="Close menu" onclick="document.getElementById('mobileMenu').classList.remove('open')">×</button>
-  <a href="#about" onclick="document.getElementById('mobileMenu').classList.remove('open')">About</a>
-  <a href="#programs" onclick="document.getElementById('mobileMenu').classList.remove('open')">Programs</a>
-  <a href="#journey" onclick="document.getElementById('mobileMenu').classList.remove('open')">Journey</a>
-  <a href="#gallery" onclick="document.getElementById('mobileMenu').classList.remove('open')">Gallery</a>
-  <a href="#blog" onclick="document.getElementById('mobileMenu').classList.remove('open')">Stories</a>
-  <a href="#donate" onclick="document.getElementById('mobileMenu').classList.remove('open')">Donate</a>
-  <a href="#contact" onclick="document.getElementById('mobileMenu').classList.remove('open')">Contact</a>
-</div>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="cherry-field" id="cherryField"></div>
-  <div class="wrap hero-grid">
-    <div>
-      <span class="eyebrow">Kasese &amp; Mt. Elgon, Uganda</span>
-      <h1>Young hands,<br>ripe <span>cherries</span>,<br>bold futures.</h1>
-      <p class="lead">Aenon Youth Coffee Growers and Producers trains and equips rural youth across Uganda to grow, process, and sell specialty coffee — turning ancestral farmland into a livelihood they own.</p>
-      <div class="hero-ctas">
-        <button class="btn btn-primary" onclick="document.getElementById('programs').scrollIntoView({behavior:'smooth'})">Explore programs →</button>
-        <button class="btn btn-gold" onclick="document.getElementById('donate').scrollIntoView({behavior:'smooth'})">Fund a farmer</button>
-      </div>
-    </div>
-    <div class="hero-card">
-      <span class="tag">This harvest season</span>
-      <h3>412 youth are growing coffee across 6 districts</h3>
-      <div class="stat-row">
-        <div class="stat"><div class="num">412</div><div class="lbl">youth farmers</div></div>
-        <div class="stat"><div class="num">38t</div><div class="lbl">coffee produced</div></div>
-        <div class="stat"><div class="num">6</div><div class="lbl">districts</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="wrap">
-    <div class="about-grid">
-      <div class="about-visual reveal">
-        <div class="ring r1"></div>
-        <div class="ring r2"></div>
-        <div class="quote">"My father grew coffee to survive. I'm growing it to build something."<br><span style="font-family:'IBM Plex Mono',monospace; font-size:.75rem; opacity:.75;">— Nakato, 22, Bugisu cooperative</span></div>
-      </div>
-      <div class="about-copy reveal">
-        <span class="eyebrow">Why this work matters</span>
-        <h2>Coffee is Uganda's second export. Youth barely see the profit.</h2>
-        <p>Over 1.7 million Ugandan households grow coffee, yet most young people leave farming behind — the margins are thin and the ladder up feels missing. Aenon rebuilds that ladder: agronomy training, shared processing equipment, and direct buyer relationships that let youth capture value past the farm gate.</p>
-        <p>We work with existing family land and district cooperatives, so nobody needs to own acreage to start — just time, curiosity, and a plot to learn on.</p>
-        <div class="pillars">
-          <div class="pillar"><div class="pnum">01</div><h4>Train</h4><p>Agronomy, pruning &amp; pest management taught by lead farmers.</p></div>
-          <div class="pillar"><div class="pnum">02</div><h4>Process</h4><p>Shared washing stations &amp; solar dryers cut post-harvest loss.</p></div>
-          <div class="pillar"><div class="pnum">03</div><h4>Sell</h4><p>Cooperative contracts with roasters at fairer, transparent prices.</p></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROGRAMS -->
-<section id="programs" class="section-alt">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">What we run</span>
-      <h2>Four programs, one goal: coffee as a real career.</h2>
-      <p>Each program is built around a stage of a young person's journey into the coffee trade — from first seedling to first export contract.</p>
-    </div>
-    <div class="programs-grid">
-      <div class="prog-card reveal" data-no="01 / GROW">
-        <h3>Young Growers Academy</h3>
-        <p>A 9-month field school teaching agronomy, soil health, and organic pest control to farmers aged 15–24.</p>
-        <div class="tags"><span>Ages 15–24</span><span>9 months</span></div>
-      </div>
-      <div class="prog-card reveal" data-no="02 / MAKE">
-        <h3>Processing &amp; Quality Labs</h3>
-        <p>Hands-on training in wet-milling, fermentation, and drying — plus cupping labs to taste what good work produces.</p>
-        <div class="tags"><span>Cupping</span><span>Wet mill</span></div>
-      </div>
-      <div class="prog-card reveal" data-no="03 / TRADE">
-        <h3>Cooperative Business School</h3>
-        <p>Bookkeeping, contract literacy, and pricing negotiation so co-ops keep more of what their coffee earns.</p>
-        <div class="tags"><span>Finance</span><span>Contracts</span></div>
-      </div>
-      <div class="prog-card reveal" data-no="04 / CONNECT">
-        <h3>Market Access Bridge</h3>
-        <p>Connecting youth-run lots directly to specialty roasters and exporters, cutting out predatory middlemen.</p>
-        <div class="tags"><span>Export</span><span>Roasters</span></div>
-      </div>
-      <div class="prog-card reveal" data-no="05 / LEAD">
-        <h3>Girls in Coffee Fellowship</h3>
-        <p>Mentorship and micro-grants for young women taking on farm and cooperative leadership roles.</p>
-        <div class="tags"><span>Mentorship</span><span>Grants</span></div>
-      </div>
-      <div class="prog-card reveal" data-no="06 / SHARE">
-        <h3>Shared Equipment Fund</h3>
-        <p>Pooled ownership of pulpers, dryers, and moisture meters so no single household bears the cost alone.</p>
-        <div class="tags"><span>Equipment</span><span>Pooled</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- JOURNEY (signature element) -->
-<section id="journey">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">Seed to cup</span>
-      <h2>The five stages every trainee lives through</h2>
-      <p>This is the actual sequence a cherry — and a young farmer's skillset — moves through each season. Scroll to follow it.</p>
-    </div>
-    <div class="journey-path reveal">
-      <div class="journey-step">
-        <span class="stage-label">01 / Nursery</span>
-        <h4>Planting &amp; nursery</h4>
-        <p>Seedlings raised in shaded nurseries for 8–10 months before transplant.</p>
-      </div>
-      <div class="journey-step">
-        <span class="stage-label">02 / Flower</span>
-        <h4>Flowering</h4>
-        <p>White blossoms signal the start of a roughly 9-month fruiting cycle.</p>
-      </div>
-      <div class="journey-step">
-        <span class="stage-label">03 / Cherry</span>
-        <h4>Ripening &amp; harvest</h4>
-        <p>Cherries are hand-picked only when fully red — the step quality is won or lost.</p>
-      </div>
-      <div class="journey-step">
-        <span class="stage-label">04 / Process</span>
-        <h4>Processing &amp; drying</h4>
-        <p>Pulping, fermenting, and sun-drying on raised beds at the shared station.</p>
-      </div>
-      <div class="journey-step">
-        <span class="stage-label">05 / Grade</span>
-        <h4>Grading &amp; sale</h4>
-        <p>Graded green beans are sold through the cooperative to roasters and exporters.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- GALLERY -->
-<section id="gallery" class="section-alt">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">From the field</span>
-      <h2>Life inside the program</h2>
-      <p>A small visual record of the work: care in the field, discipline at the station, and pride in every lot.</p>
-    </div>
-    <div class="gallery-grid reveal">
-      <div class="g-tile" data-no="01"><span>Nursery beds, Kasese</span></div>
-      <div class="g-tile" data-no="02"><span>Harvest day</span></div>
-      <div class="g-tile" data-no="03"><span>Cupping lab</span></div>
-      <div class="g-tile" data-no="04"><span>Solar drying beds</span></div>
-      <div class="g-tile" data-no="05"><span>Cooperative meeting</span></div>
-      <div class="g-tile" data-no="06"><span>Export lot, graded</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- IMPACT / DARK -->
-<section class="section-dark">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow" style="color:var(--gold)">Three seasons in</span>
-      <h2>Numbers we're proud of, and still chasing</h2>
-    </div>
-    <div class="impact-strip reveal">
-      <div><div class="num">412</div><div class="lbl">active youth farmers</div></div>
-      <div><div class="num">38t</div><div class="lbl">coffee produced last season</div></div>
-      <div><div class="num">6</div><div class="lbl">districts reached</div></div>
-      <div><div class="num">61%</div><div class="lbl">participants under 24</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- BLOG -->
-<section id="blog">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">Stories &amp; updates</span>
-      <h2>From the cooperatives</h2>
-      <p>Field notes, harvest reports, and spotlights on the young farmers doing the work.</p>
-    </div>
-    <div class="blog-grid">
-      <article class="post reveal">
-        <div class="post-media"></div>
-        <div class="post-body">
-          <span class="date">Aug 2026 · Harvest report</span>
-          <h3>This season's cherries came in early — and heavier</h3>
-          <p>Warmer nights pushed ripening ahead of schedule across Bugisu. Here's how the drying schedule adapted.</p>
-          <div class="readmore">Read the update →</div>
-        </div>
-      </article>
-      <article class="post reveal">
-        <div class="post-media"></div>
-        <div class="post-body">
-          <span class="date">Jul 2026 · Spotlight</span>
-          <h3>Nakato, 22: from trainee to cooperative treasurer</h3>
-          <p>Two years after joining the Young Growers Academy, Nakato now manages contracts for 40 member farms.</p>
-          <div class="readmore">Read her story →</div>
-        </div>
-      </article>
-      <article class="post reveal">
-        <div class="post-media"></div>
-        <div class="post-body">
-          <span class="date">Jun 2026 · Program news</span>
-          <h3>Two new solar dryers land in Kasese district</h3>
-          <p>Funded through last quarter's donations, the dryers cut post-harvest losses by an estimated third.</p>
-          <div class="readmore">Read more →</div>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- DONATE -->
-<section id="donate" class="section-alt">
-  <div class="wrap">
-    <div class="donate-grid">
-      <div class="reveal">
-        <span class="eyebrow">Get involved</span>
-        <h2>Your contribution funds a real season, not a slogan.</h2>
-        <p style="color:var(--coffee-soft); margin-bottom:26px;">Every tier below maps to something concrete — a nursery bag, a training seat, a piece of shared equipment. Pick what feels right.</p>
-        <button class="btn btn-primary">See annual report</button>
-      </div>
-      <div class="tier-cards reveal">
-        <div class="tier">
-          <div><div class="amt">$25</div><div class="desc">Supplies 50 coffee seedlings for one nursery bed.</div></div>
-          <div class="go">→</div>
-        </div>
-        <div class="tier">
-          <div><div class="amt">$75</div><div class="desc">Sponsors one youth through a full training term.</div></div>
-          <div class="go">→</div>
-        </div>
-        <div class="tier">
-          <div><div class="amt">$250</div><div class="desc">Funds a moisture meter for a shared processing station.</div></div>
-          <div class="go">→</div>
-        </div>
-        <div class="tier">
-          <div><div class="amt">Custom</div><div class="desc">Partner with us on a district-level program or equipment fund.</div></div>
-          <div class="go">→</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">Reach us</span>
-      <h2>Volunteer, partner, or just say hello</h2>
-    </div>
-    <div class="contact-wrap">
-      <div class="info-card reveal">
-        <h3>Aenon Youth Coffee Growers and Producers</h3>
-        <div class="info-row"><span>Plot 14, Coffee Growers Lane, Mbale, Uganda</span></div>
-        <div class="info-row"><span>hello@aenoncoffee.ug</span></div>
-        <div class="info-row"><span>+256 700 123 456</span></div>
-        <div class="info-row"><span>Mon–Fri, 8:00–17:00 EAT</span></div>
-      </div>
-      <form class="form-card reveal" onsubmit="event.preventDefault(); this.querySelector('.confirm').style.display='block';">
-        <div class="form-grid">
-          <div class="field"><label for="name">Full name</label><input id="name" type="text" required></div>
-          <div class="field"><label for="email">Email</label><input id="email" type="email" required></div>
-          <div class="field full"><label for="role">I want to</label>
-            <select id="role">
-              <option>Volunteer with a cooperative</option>
-              <option>Partner as an organization</option>
-              <option>Buy or source coffee</option>
-              <option>Ask a general question</option>
-            </select>
-          </div>
-          <div class="field full"><label for="msg">Message</label><textarea id="msg" required></textarea></div>
-        </div>
-        <div class="submit-row">
-          <button class="btn btn-primary" type="submit">Send message</button>
-          <span class="confirm" style="display:none; color:var(--leaf); font-size:.9rem; font-weight:600;">Thanks — we'll reply within 2 business days.</span>
-        </div>
-      </form>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    <div class="foot-grid">
-      <div>
-        <div class="brand" style="font-size:1.1rem;">Aenon&nbsp;Youth&nbsp;Coffee</div>
-        <p class="tag">A youth-led coffee growing and production collective working across six districts in Uganda.</p>
-        <div class="social" style="margin-top:16px;">
-          <a href="#" aria-label="Instagram">IG</a>
-          <a href="#" aria-label="Facebook">FB</a>
-          <a href="#" aria-label="X">X</a>
-        </div>
-      </div>
-      <div>
-        <h4>Explore</h4>
-        <ul><li><a href="#about">About</a></li><li><a href="#programs">Programs</a></li><li><a href="#journey">Journey</a></li><li><a href="#gallery">Gallery</a></li></ul>
-      </div>
-      <div>
-        <h4>Involved</h4>
-        <ul><li><a href="#donate">Donate</a></li><li><a href="#contact">Volunteer</a></li><li><a href="#blog">Stories</a></li></ul>
-      </div>
-      <div>
-        <h4>Newsletter</h4>
-        <p class="tag" style="margin-bottom:10px;">Season updates, twice a year.</p>
-        <div style="display:flex; gap:8px;">
-          <input type="email" placeholder="you@email.com" style="flex:1; background:rgba(255,246,233,0.08); border:1px solid rgba(255,246,233,0.25); color:var(--cream);">
-          <button class="btn btn-gold" style="padding:10px 16px;">Join</button>
-        </div>
-      </div>
-    </div>
-    <div class="foot-bottom">
-      <span>© 2026 Aenon Youth Coffee Growers and Producers. All rights reserved.</span>
-      <span>Built with care for young growers.</span>
-    </div>
-  </div>
-</footer>
-
-<script>
-  // Scroll reveal
-  const revealEls = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); } });
-  }, {threshold:0.12});
-  revealEls.forEach(el=>io.observe(el));
-</script>
-
+  </header>
+  <aside class="mobile-panel" id="mobile-menu" aria-label="Mobile navigation">
+    <div class="mobile-top"><span class="wordmark"><span class="wordmark-mark">A</span><span>Aenon Youth Coffee</span></span><button class="mobile-close" type="button" aria-label="Close menu">×</button></div>
+    <nav class="mobile-links"><a href="#work">Our work</a><a href="#approach">Approach</a><a href="#contact">Contact</a></nav>
+    <a class="button button--light" href="#contact">Partner with us</a>
+  </aside>
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-media" aria-hidden="true"><img src="https://www.shared-interest.com/images/media/Project%20Images/Banyankole%20Coffee%20Services/P1123611.jpg?h=900&amp;w=1600" alt=""></div>
+      <div class="hero-inner shell"><div class="hero-copy"><p class="eyebrow">Kasese &amp; Mt. Elgon, Uganda</p><h1 id="hero-title">Coffee for the next <em>generation.</em></h1><p>A youth-led collective growing, processing and taking Ugandan coffee further — with more care, more craft, and more value staying close to home.</p><a class="button button--light" href="#work">See how we work</a></div><p class="hero-note">Aenon Youth Coffee<br>Growers &amp; Producers</p></div>
+    </section>
+    <section class="statement" id="work" aria-labelledby="statement-title"><div class="shell statement-grid"><p class="eyebrow">The work</p><div><h2 id="statement-title">A cup of coffee can hold <em>an entire future.</em></h2><div class="statement-copy"><p>We see coffee as more than a crop. It is knowledge passed between generations, patient work in the soil, and a way for young growers to build a life with room to stay, lead and thrive.</p><p>Aenon brings young people into every meaningful part of the journey — from seedlings and soil to processing, quality and market access.</p></div><div class="quiet-rule"></div></div></div></section>
+    <section class="feature" aria-labelledby="feature-title"><div class="feature-media"><img src="https://alliancebioversityciat.org/sites/default/files/styles/header_image_teaser/public/images/1_GY1W2Qd-d8bLsMyLsQeBlg-1080x675.jpeg?itok=1cazL1_a" alt="Coffee farmer tending ripe cherries in Uganda" loading="lazy"></div><div class="feature-copy"><div><p class="eyebrow">Made close to the ground</p><h2 id="feature-title">From the first <em>cherry</em> to the final lot.</h2><p>We make space for practical learning: how to grow healthier trees, pick with precision, work together at the station, and understand the value of every decision along the way.</p></div><p class="caption">The details matter — in the field, at the drying bed, and at the cupping table.</p></div></section>
+    <section class="principles" id="approach" aria-labelledby="principles-title"><div class="shell"><div class="principles-head"><h2 id="principles-title">The long way is the good way.</h2><p class="principles-intro">Good coffee is not rushed. Neither is the work of building a more equitable coffee economy.</p></div><div class="principle-list"><article class="principle"><span class="principle-number">01</span><h3>Learn together</h3><p>Skills are shared in the field, with hands in the soil and room for questions, practice and pride.</p></article><article class="principle"><span class="principle-number">02</span><h3>Make it count</h3><p>Careful picking, processing and quality work protect the character of every harvest.</p></article><article class="principle"><span class="principle-number">03</span><h3>Grow ownership</h3><p>Young people deserve to understand the trade, shape the decisions and share in the value they create.</p></article></div></div></section>
+    <section class="closing" id="contact" aria-labelledby="contact-title"><div class="closing-image" aria-hidden="true"><img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&amp;fit=crop&amp;w=1800&amp;q=85" alt="" loading="lazy"></div><div class="closing-copy"><p class="eyebrow">Work with Aenon</p><h2 id="contact-title">There is room at the table for <em>more.</em></h2><a class="button button--light" href="mailto:hello@aenoncoffee.ug">Start a conversation</a></div></section>
+  </main>
+  <footer><div class="shell"><div class="footer-top"><a class="wordmark" href="#top"><span class="wordmark-mark">A</span><span>Aenon Youth Coffee</span></a><p class="footer-address">A youth-led coffee growing and production collective in Uganda.<br><a href="mailto:hello@aenoncoffee.ug">hello@aenoncoffee.ug</a></p></div><div class="footer-bottom"><span>© 2026 Aenon Youth Coffee Growers &amp; Producers</span><span>Photography: <a href="https://www.shared-interest.com/" target="_blank" rel="noreferrer">Shared Interest</a> &amp; <a href="https://alliancebioversityciat.org/" target="_blank" rel="noreferrer">Alliance Bioversity–CIAT</a></span></div></div></footer>
+  <script>
+    const menuButton=document.querySelector('.menu'); const panel=document.querySelector('.mobile-panel'); const closeButton=document.querySelector('.mobile-close');
+    const closeMenu=()=>{panel.classList.remove('is-open');menuButton.setAttribute('aria-expanded','false');document.body.style.overflow='';};
+    menuButton.addEventListener('click',()=>{panel.classList.add('is-open');menuButton.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';}); closeButton.addEventListener('click',closeMenu); panel.querySelectorAll('a').forEach(link=>link.addEventListener('click',closeMenu));
+  </script>
 </body>
 </html>
